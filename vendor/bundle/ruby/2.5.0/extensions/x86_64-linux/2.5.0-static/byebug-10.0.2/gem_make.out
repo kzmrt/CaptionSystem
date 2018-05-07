@@ -1,0 +1,19 @@
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+/home/kmurata/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180507-6893-17cizqc.rb extconf.rb
+creating Makefile
+
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/byebug-10.0.2/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20180507-6893-1fhbe80/byebug

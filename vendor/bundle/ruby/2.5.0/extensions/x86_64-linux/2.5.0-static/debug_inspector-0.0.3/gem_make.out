@@ -1,0 +1,15 @@
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+/home/kmurata/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20180507-6893-rxf3hz.rb extconf.rb
+creating Makefile
+
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" clean
+
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR="
+compiling debug_inspector.c
+linking shared-object debug_inspector.so
+
+current directory: /home/kmurata/CaptionSystem/vendor/bundle/ruby/2.5.0/gems/debug_inspector-0.0.3/ext/debug_inspector
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 debug_inspector.so ./.gem.20180507-6893-1o8qqpa
