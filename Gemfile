@@ -53,6 +53,7 @@ group :development do
   gem 'pry-rails'
   gem 'rubocop'
   gem 'annotate'
+  gem 'pre-commit'
 end
 
 group :test do
