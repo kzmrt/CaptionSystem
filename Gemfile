@@ -54,6 +54,7 @@ group :development do
   gem 'rubocop'
   gem 'annotate'
   gem 'pre-commit'
+  gem 'devise'
 end
 
 group :test do
