@@ -55,6 +55,8 @@ group :development do
   gem 'annotate'
   gem 'pre-commit'
   gem 'devise'
+  gem 'sidekiq'
+  gem 'sinatra'
 end
 
 group :test do
