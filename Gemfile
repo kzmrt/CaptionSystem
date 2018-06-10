@@ -57,6 +57,7 @@ group :development do
   gem 'devise'
   gem 'sidekiq'
   gem 'sinatra'
+  gem 'paperclip', '~> 5.0.0'
 end
 
 group :test do

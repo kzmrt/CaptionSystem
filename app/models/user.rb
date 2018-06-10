@@ -24,6 +24,10 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  name                   :string(255)
+#  avatar_file_name       :string(255)
+#  avatar_content_type    :string(255)
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 
 class User < ApplicationRecord
@@ -68,4 +72,11 @@ class User < ApplicationRecord
       ["lower(name) = :value OR lower(email) = :value", { value: login.downcase }]
     ).first
   end
+
+  has_attached_file :avatar,
+					styles: { medium: '300x300>', thumb: '100x100>' },
+					default_url: '/missing.jpg'
+
+  validates_attachment_content_type :avatar,
+									content_type: %r{\Aimage\/. *\z}
 end
