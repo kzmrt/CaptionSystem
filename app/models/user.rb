@@ -78,5 +78,6 @@ class User < ApplicationRecord
 					default_url: '/missing.jpg'
 
   validates_attachment_content_type :avatar,
-									content_type: %r{\Aimage\/. *\z}
+									content_type:["image/jpg","image/jpeg","image/png","image/gif"]
+#									content_type: %r{\Aimage\/. *\z}
 end
