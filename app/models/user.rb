@@ -31,10 +31,14 @@
 #
 
 class User < ApplicationRecord
- 
+
+  has_many :captions, inverse_of: :user
+
   validates :name,
-			presence: true,
-			uniqueness: { case_sensitive: false}
+    presence: true,
+    uniqueness: {
+      case_sensitive: false
+    }
 
   validates_format_of :name, with: /^[a-zA-Z0-9_\.]*$/, multiline: true
   validate :validate_name
@@ -73,11 +77,15 @@ class User < ApplicationRecord
     ).first
   end
 
-  has_attached_file :avatar,
-					styles: { medium: '300x300>', thumb: '100x100>' },
-					default_url: '/missing.jpg'
+  has_attached_file :avatar, styles: {
+    medium: '300x300>',
+    thumb: '100x100>'
+  }, default_url: '/missing.jpg'
 
-  validates_attachment_content_type :avatar,
-									content_type:["image/jpg","image/jpeg","image/png","image/gif"]
-#									content_type: %r{\Aimage\/. *\z}
+  validates_attachment_content_type :avatar, content_type: [
+    'image/jpg',
+    'image/jpeg',
+    'image/png',
+    'image/gif'
+  ]
 end

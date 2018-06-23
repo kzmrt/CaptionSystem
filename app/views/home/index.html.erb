@@ -1,13 +1,17 @@
-<h1>Hello, <%= @user.name %>!!!</h1>
-
-<div class="col-md-3">
-  <div class="card p-2">
-    <%= image_tag current_user.avatar.url, class: "card-img-top rounded-circle" %>
-    <div class="card-body">
-      <h4 class="card-title"><%= "@#{@user.name}" %></h4>
-      <p class="card-text">
-        <span class="text-secondary">ユーザ情報がここに入ります。</span>
-      </p>
+<div class="row">
+  <div class="col-md-3 col-12 d-note d-md-block">
+    <div class="card p-2">
+      <%= image_tag current_user.avatar.url, class: "card-img-top rounded-circle" %>
+      <div class="card-body">
+        <h4 class="card-title"><%= "@#{@user.name}" %></h4>
+        <p class="card-text">
+          <span class="text-secondary">アメリカファースト!!</span>
+        </p>
+      </div>
     </div>
+  </div>
+
+  <div class="col-md-9 col-12">
+    <%= render partial: "caption", collection: @captions %>
   </div>
 </div>

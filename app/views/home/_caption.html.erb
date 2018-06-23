@@ -1,0 +1,14 @@
+<div class="border border-left-0 border-right-0 border-bottom-0 py-3 row">
+  <div class="col-10 px-3">
+    <p class="my-1">
+      <strong><%= "@#{caption.user.name}" %></strong>
+      ・<span class="text-secondary"><%= time_ago_in_words(caption.created_at) %>
+    </p>
+    タイトル:<%= caption.title %><br />
+    作家名:<%= caption.name %><br />
+    サイズ:<%= caption.size %><br />
+    画材:<%= caption.supplies %><br />
+    価格:<%= caption.price %><br />
+    メモ:<%= caption.memo %>
+  </div>
+</div>
