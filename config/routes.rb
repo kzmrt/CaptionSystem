@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
+  resources :captions, only: [:new, :create, :edit, :update, :destroy]
 end

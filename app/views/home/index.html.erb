@@ -11,6 +11,8 @@
     </div>
   </div>
 
+  <%= link_to "新規登録", new_caption_path, class: 'btn btn-primary' %>
+
   <div class="col-md-9 col-12">
     <%= render partial: "caption", collection: @captions %>
   </div>

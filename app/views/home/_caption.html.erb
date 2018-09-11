@@ -4,31 +4,35 @@
       <strong><%= "@#{caption.user.name}" %></strong>
       ・<span class="text-secondary"><%= time_ago_in_words(caption.created_at) %>
     </p>
-    <table>
+    <table border=1>
       <tr>
-        <td><font color="blue">タイトル:&nbsp;</font></td>
+        <td><font color="blue">タイトル&nbsp;</font></td>
         <td><%= caption.title %></td>
       </tr>
       <tr>
-        <td><font color="blue">作家名:&nbsp;</font></td>
+        <td><font color="blue">作家名&nbsp;</font></td>
         <td><%= caption.name %></td>
       </tr>
       <tr>
-        <td><font color="blue">サイズ:&nbsp;</font></td>
+        <td><font color="blue">サイズ&nbsp;</font></td>
         <td><%= caption.size %></td>
       </tr>
       <tr>
-        <td><font color="blue">画材:&nbsp;</font></td>
+        <td><font color="blue">画材&nbsp;</font></td>
         <td><%= caption.supplies %></td>
       </tr>
       <tr>
-        <td><font color="blue">価格:&nbsp;</font></td>
+        <td><font color="blue">価格&nbsp;</font></td>
         <td><%= caption.price %></td>
       </tr>
       <tr>
-        <td><font color="blue">メモ:&nbsp;</font></td>
+        <td><font color="blue">メモ&nbsp;</font></td>
         <td><%= caption.memo %></td>
       </tr>
-    </talbe>
+    </table>
+    <div class="btn-group">
+    <%= link_to "編集", edit_caption_path(caption.id), class: 'btn btn-info' %>
+    <%= link_to "削除", caption_path(caption.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-warning' %>
+    </div>
   </div>
 </div>
