@@ -1,5 +1,6 @@
-class CaptionsController < ApplicationController
+# frozen_string_literal: true
 
+class CaptionsController < ApplicationController
   def new
     flash.now[:notice] = 'キャプション情報を入力してください。'
     @caption = Caption.new

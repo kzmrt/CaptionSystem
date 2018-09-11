@@ -58,6 +58,7 @@ group :development do
   gem 'sidekiq'
   gem 'sinatra'
   gem 'paperclip', '~> 5.0.0'
+  gem 'kaminari'
 end
 
 group :test do
