@@ -9,3 +9,5 @@ Sidekiq.configure_client do |config|
     url: 'redis://localhost:6379'
   }
 end
+
+Sidekiq::Logging.logger = Rails.logger
