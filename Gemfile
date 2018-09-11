@@ -59,6 +59,7 @@ group :development do
   gem 'sinatra'
   gem 'paperclip', '~> 5.0.0'
   gem 'kaminari'
+  gem 'activeadmin'
 end
 
 group :test do
