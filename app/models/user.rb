@@ -28,6 +28,7 @@
 #  avatar_content_type    :string(255)
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  role                   :integer          default(0), not null
 #
 
 class User < ApplicationRecord
@@ -88,4 +89,6 @@ class User < ApplicationRecord
     'image/png',
     'image/gif'
   ]
+
+  enum role: { user: 0, admin: 1 }
 end
