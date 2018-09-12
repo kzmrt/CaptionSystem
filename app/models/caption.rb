@@ -16,4 +16,9 @@
 
 class Caption < ApplicationRecord
   belongs_to :user, inverse_of: :captions
+  validates :title, presence: true
+  validates :name, presence: true
+  validates :size, presence: true
+  validates :supplies, presence: true
+  validates :price, presence: true
 end

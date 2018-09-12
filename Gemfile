@@ -60,6 +60,7 @@ group :development do
   gem 'paperclip', '~> 5.0.0'
   gem 'kaminari'
   gem 'activeadmin'
+  gem 'rails-i18n'
 end
 
 group :test do

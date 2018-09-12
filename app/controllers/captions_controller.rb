@@ -17,21 +17,26 @@ class CaptionsController < ApplicationController
   end
 
   def create
-    if current_user.captions.create(caption_params)
+#    current_user.captions.create(caption_params)
+    @caption = current_user.captions.new(caption_params)
+    if @caption.save
       flash[:notice] = '登録しました。'
+      redirect_to :root
     else
-      flash[:error] = '登録に失敗しました。'
+      flash.now[:error] = @caption.errors.full_messages
+      render action: :new
     end
-
-    redirect_to :root
   end
 
   def update
     @caption = find_caption_by_id
-    @caption.update(caption_params)
-    flash[:notice] = '更新しました。'
-
-    redirect_to :root
+    if @caption.update(caption_params)
+      flash[:notice] = '更新しました。'
+      redirect_to :root
+    else
+      flash.now[:error] = @caption.errors.full_messages
+      render action: :edit
+    end
   end
 
   def destroy
