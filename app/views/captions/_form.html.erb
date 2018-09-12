@@ -1,29 +1,29 @@
 <%= form_with model: @caption, local: true do |f| %>
 
-　　<table border="1">
+　　<table class="table table-condensed table-bordered">
     <tr>
-      <td>タイトル</td>
+      <td><font color="blue">タイトル</font></td>
       <td><%= f.text_field :title, class: "form-control", placeholder: "タイトル" %></td>
     </tr>
     <tr>
-      <td>作家名</td>
+      <td><font color="blue">作家名</font></td>
       <td><%= f.text_field :name, class: "form-control", placeholder: "作家名" %></td>
     </tr>
     <tr>
-      <td>サイズ</td>
+      <td><font color="blue">サイズ</font></td>
       <td><%= f.text_field :size, class: "form-control", placeholder: "300×300 mm" %></td>
     </tr>
     <tr>
-      <td>画材</td>
+      <td><font color="blue">画材</font></td>
       <td><%= f.text_field :supplies, class: "form-control", placeholder: "岩絵の具、膠" %></td>
     </tr>
     <tr>
-      <td>価格（税、額代、送料込み）</td>
+      <td><font color="blue">価格（税、額代込み）</font></td>
       <td><%= f.text_field :price, class: "form-control", placeholder: "￥500,000" %></td>
     </tr>
     <tr>
-      <td>メモ</td>
-      <td><%= f.text_field :memo, class: "form-control", placeholder: "作品に関するコメント" %></td>
+      <td><font color="blue">自由コメント</font></td>
+      <td><%= f.text_field :memo, class: "form-control", placeholder: "作品に関するコメント（入力は任意）" %></td>
     </tr>
   </table>
 
