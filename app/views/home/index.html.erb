@@ -4,16 +4,17 @@
       <%= image_tag current_user.avatar.url, class: "card-img-top rounded-circle" %>
       <div class="card-body">
         <h4 class="card-title"><%= "@#{@user.name}" %></h4>
-        <p class="card-text">
-          <span class="text-secondary">アメリカファースト!!</span>
-        </p>
+        <% if @user.admin? %>
+          <p class="card-text">
+            <span class="text-secondary">アメリカファースト!!<br>管理者だよ！</span>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>
 
-  <%= link_to "新規登録", new_caption_path, class: 'btn btn-primary' %>
-
   <div class="col-md-9 col-12">
+    <%= link_to "新規登録", new_caption_path, class: 'btn btn-primary btn-lg btn-block' %>
     <%= render partial: "caption", collection: @captions %>
   </div>
   <%= paginate @captions %>

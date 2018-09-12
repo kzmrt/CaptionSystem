@@ -3,6 +3,10 @@
 class HomeController < ApplicationController
   def index
     @user = current_user
-    @captions = Caption.order('created_at desc').page params[:page]
+    if @user.admin?
+      @captions = Caption.order('created_at desc').page params[:page]
+    else
+      @captions = @user.captions.order('created_at desc').page params[:page]
+    end
   end
 end

@@ -30,9 +30,10 @@
         <td><%= caption.memo %></td>
       </tr>
     </table>
+
     <div class="btn-group">
-    <%= link_to "編集", edit_caption_path(caption.id), class: 'btn btn-info' %>
-    <%= link_to "削除", caption_path(caption.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-warning' %>
+      <%= link_to "編集", edit_caption_path(caption.id), class: 'btn btn-info btn-lg' %>
+      <%= link_to "削除", caption_path(caption.id), method: :delete, data: {confirm: "本当に削除しますか？"}, class: 'btn btn-warning btn-lg btn-block' %>
     </div>
   </div>
 </div>

@@ -7,8 +7,13 @@ class CaptionsController < ApplicationController
   end
 
   def edit
-    flash.now[:notice] = 'キャプション情報を編集してください。'
     @caption = find_caption_by_id
+    if current_user.admin? || current_user.id == @caption.user.id
+      flash.now[:notice] = 'キャプション情報を編集してください。'
+    else
+      flash[:error] = '編集権限がありません。'
+      redirect_to :root
+    end
   end
 
   def create
@@ -31,9 +36,12 @@ class CaptionsController < ApplicationController
 
   def destroy
     @caption = find_caption_by_id
-    @caption.destroy
-    flash[:notice] = '削除しました。'
-
+    if current_user.admin? || current_user.id == @caption.user.id
+      @caption.destroy
+      flash[:notice] = '削除しました。'
+    else
+      flash[:error] = '削除権限がありません。'
+    end
     redirect_to :root
   end
 
