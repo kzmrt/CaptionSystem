@@ -7,3 +7,10 @@ ja:
         size: サイズ
         supplies: 画材
         price: 価格
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
+        email: メールアドレス
+        remember_me: パスワードを記憶
