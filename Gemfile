@@ -61,6 +61,7 @@ group :development do
   gem 'kaminari'
   gem 'activeadmin'
   gem 'rails-i18n'
+  gem 'rubyXL'
 end
 
 group :test do

@@ -1,6 +1,50 @@
 # frozen_string_literal: true
 
+require 'rubyXL'
+
 class CaptionsController < ApplicationController
+  def index
+    @captions = Caption.all
+
+    # テンプレートの読み込み
+    workbook = RubyXL::Parser.parse('app/assets/template.xlsx')
+    workbook.calc_pr.full_calc_on_load = true
+    workbook.calc_pr.calc_completed = true
+    workbook.calc_pr.calc_on_save = true
+    workbook.calc_pr.force_full_calc = true
+
+    # 一番目のワークシート読み込み
+    worksheet = workbook[0]
+
+    # データ書き込み
+    num = 1
+    @captions.each{|caption|
+      worksheet[num][0].change_contents(caption.title)    # タイトル
+      worksheet[num][1].change_contents(caption.name)     # 作者名
+      worksheet[num][2].change_contents(caption.size)     # サイズ
+      worksheet[num][3].change_contents(caption.supplies) # 画材
+      worksheet[num][4].change_contents(caption.price)    # 値段
+      puts "title: " + caption.title
+      if caption.memo.blank?
+        worksheet[num][5].change_contents("")
+      else
+        worksheet[num][5].change_contents(caption.memo)    # コメント
+      end
+      num += 1
+    }
+
+    respond_to do |format|
+      format.html
+      format.xlsx do
+       send_data workbook.stream.read,
+         filename: "Caption.xlsx".encode(Encoding::Windows_31J)
+      end
+    end
+  ensure
+    workbook.stream.close
+    puts "streamを閉じました"
+  end
+
   def new
     flash.now[:notice] = 'キャプション情報を入力してください。'
     @caption = Caption.new
