@@ -1,24 +1,26 @@
-# README
+# CaptionSystem
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+これは、キャプション情報登録用のアプリケーションです。
+権限に応じて以下の処理を行うことができます。
+- ユーザ権限：自分のキャプション情報登録、編集、削除、閲覧。
+- 管理者権限：全員のキャプション情報登録、編集、削除、閲覧、およびExcel出力。
+新規ユーザはSign Up画面から登録することで当該アプリケーションを使用することが出来るようになります。
 
-Things you may want to cover:
+## 設定
 
-* Ruby version
+以下のソースを環境に合わせて設定したください。
+- config/environments/development.rb
+- config/initializers/devise.rb
 
-* System dependencies
+## 起動方法
 
-* Configuration
+Redis と Sidekiqを立ち上げる必要があります。
+- Redisの起動
+ - $ redis-server
+- Sidekiqの起動
+ - $ bundle exec sidekiq -C config/sidekiq.yml -e development
 
-* Database creation
+## 動作環境
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- ruby: 2.5.1
+- Rails: 5.2.0

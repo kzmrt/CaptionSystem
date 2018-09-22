@@ -51,6 +51,17 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rubocop'
+  gem 'annotate'
+  gem 'pre-commit'
+  gem 'devise'
+  gem 'sidekiq'
+  gem 'sinatra'
+  gem 'paperclip', '~> 5.0.0'
+  gem 'kaminari'
+  gem 'activeadmin'
+  gem 'rails-i18n'
+  gem 'rubyXL'
 end
 
 group :test do
@@ -58,6 +69,12 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
+
+# view
+gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.12.3'
+gem 'tether-rails'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

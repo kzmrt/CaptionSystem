@@ -29,5 +29,15 @@ module CaptionSystem
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.skip_routes true
+      g.stylesheets false
+      g.javascripts false
+      g.helper false
+    end
+
+	config.active_job.queue_adapter = :sidekiq
+    config.i18n.default_locale = :ja
   end
 end

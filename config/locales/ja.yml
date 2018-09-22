@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      caption:
+        title: タイトル
+        name: 作家名
+        size: サイズ
+        supplies: 画材
+        price: 価格
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード確認
+        current_password: 現在のパスワード
+        email: メールアドレス
+        remember_me: パスワードを記憶

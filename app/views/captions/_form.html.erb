@@ -1,0 +1,36 @@
+<%= form_with model: @caption, local: true do |f| %>
+
+　　<table class="table table-condensed table-bordered">
+    <tr>
+      <td><font color="blue">タイトル</font></td>
+      <td><%= f.text_field :title, class: "form-control", placeholder: "タイトル" %></td>
+    </tr>
+    <tr>
+      <td><font color="blue">作家名</font></td>
+      <td><%= f.text_field :name, class: "form-control", placeholder: "作家名" %></td>
+    </tr>
+    <tr>
+      <td><font color="blue">サイズ</font></td>
+      <td><%= f.text_field :size, class: "form-control", placeholder: "300×300 mm" %></td>
+    </tr>
+    <tr>
+      <td><font color="blue">画材</font></td>
+      <td><%= f.text_field :supplies, class: "form-control", placeholder: "岩絵の具、膠" %></td>
+    </tr>
+    <tr>
+      <td><font color="blue">価格（税、額代込み）</font></td>
+      <td><%= f.text_field :price, class: "form-control", placeholder: "￥500,000" %></td>
+    </tr>
+    <tr>
+      <td><font color="blue">自由コメント</font></td>
+      <td><%= f.text_field :memo, class: "form-control", placeholder: "作品に関するコメント（入力は任意）" %></td>
+    </tr>
+  </table>
+
+  <div class="input-group pb-4 mx-0">
+    <span class="input-group-btn">
+　　　　　　<%= f.submit local_assigns[:btn_name], class: "btn btn-primary btn-lg btn-block" %>
+    </span>
+  </div>
+
+<% end %>
